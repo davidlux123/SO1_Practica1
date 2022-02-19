@@ -15,7 +15,7 @@ services:
       - sopr1-net
 
   backend:
-    build: ./back-end
+    image: davidlux123/backend_so1pr1_201549059
     container_name: backend-go
     environment:
       MONGO_USERNAME: mongoadmin
@@ -30,7 +30,7 @@ services:
     - sopr1-net
 
   frontend:
-    build: ./front-end
+    image: davidlux123/frontend_so1pr1_201549059
     container_name: frontend-react-nginx
     ports:
     - "81:80"
