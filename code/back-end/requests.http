@@ -1,0 +1,20 @@
+### get logs
+GET http://localhost:8000/logs
+
+### post
+POST http://localhost:8000/calcu
+Content-Type: application/json
+
+{
+    "v1": 5,
+    "v2": 5,
+    "operacion": "*",
+    "result": 0,
+    "fecha": "1/1/1 23:51"
+}
+
+
+docker run -d -p 27017:27017 --network sopr1-net --name mongodb -v /home/david/Escritorio/DockerVolumes/mongodata:/data/db -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=1234 mongo
+
+docker build -t back-end-go:v0 .
+docker run -it --rm -p 8000:8000 --network sopr1-net --name backendGO -e MONGO_HOST=mongodb -e MONGO_USERNAME=mongoadmin -e MONGO_PASSWORD=1234 back-end-go:v0 

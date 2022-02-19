@@ -1,0 +1,86 @@
+::before, *::after{
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #fafafa;
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  /* IMPORTANTE */
+  text-align: center;
+}
+
+.conte{
+  display: flex;
+  justify-content: center;
+}
+
+.item{
+  margin: 1em;
+  padding: 1em;
+  justify-content: center;
+
+}
+
+body{
+  background: linear-gradient(to right, #C8d2fc, #2f477a, #ffffff);
+}
+
+.App{
+  height: 100vh;
+  width: 100%;
+}
+
+.calculator-grid{
+  display: grid;
+  justify-content:  center;
+  align-content: center;
+  grid-template-columns: repeat(4,80px);
+  grid-template-rows: minmax(80px, auto) repeat(5,80px);
+
+}
+
+.calculator-grid>button{
+  border-radius: 1rem;
+  cursor:pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color:black;
+  border: 1px solid white;
+  outline: none;
+  background-color: #fafafa75;
+  margin: 3px;
+}
+
+.calculator-grid>button:hover{
+  background-color: #fafafa;
+}
+
+.span-two{
+  grid-column: span 2;
+}
+
+.output{
+  grid-column: 1 / -1;
+  margin-bottom: .5rem;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand{
+  color: #00000090;
+  font-size: 1.5rem;
+}
+
+.output .current-operand{
+  color: #bb7177;
+  font-size: 2.5rem;
+}
